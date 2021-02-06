@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
 @Component({
@@ -8,10 +9,17 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 })
 export class CheckoutProductsComponent implements OnInit {
   @Input() checkout_products: any[];
+  // Parent component listening to Output deleteEvent to remove deleted item from DOM
+  @Output() deleteEvent: EventEmitter<any> = new EventEmitter();
 
   constructor(public shopping_cart_service: ShoppingCartService) {}
 
   ngOnInit(): void {
-    console.log('products ', this.checkout_products);
+    // console.log('products ', this.checkout_products);
+  }
+
+  removeItem(p) {
+    this.shopping_cart_service.removeItem(p);
+    this.deleteEvent.emit(p);
   }
 }
