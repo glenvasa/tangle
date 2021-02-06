@@ -8,9 +8,10 @@
       <p><strong>Shopping Cart</strong></p>
       <app-checkout-products
         [checkout_products]="items"
+        (deleteEvent)="deleteEventHandler($event)"
       ></app-checkout-products>
     </div>
   </div>
   <div class="checkout_right"></div>
-  <!-- <app-checkout-subtotal></app-checkout-subtotal> -->
+  <app-checkout-subtotal></app-checkout-subtotal>
 </div>
