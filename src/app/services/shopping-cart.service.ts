@@ -36,4 +36,13 @@ export class ShoppingCartService {
     let items = this.get_shopping_cart_items();
     return items?.reduce((acc, item) => acc + item.price, 0);
   };
+
+  removeItem = (p) => {
+    let items = this.get_shopping_cart_items();
+    const index = items.findIndex((item) => item.id == p.id);
+    if (index >= 0) {
+      items.splice(index, 1);
+      return localStorage.setItem('shopping_cart', JSON.stringify(items));
+    }
+  };
 }
