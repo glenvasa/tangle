@@ -62,9 +62,17 @@
   margin: 12px 20px 0px 2px;
 }
 
+.header_menu_logo:hover {
+  cursor: pointer;
+}
+
 .header_menu_signin {
   display: flex;
   flex-direction: column;
+}
+
+.signin_link {
+  cursor: pointer;
 }
 
 .header_menu_top_item {
@@ -89,6 +97,10 @@
 .header_menu_cart > mat-icon {
   font-size: 26px;
   height: 30px;
+}
+
+.header_menu_cart > mat-icon:hover {
+  cursor: pointer;
 }
 
 .header_cart_number {
