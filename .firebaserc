@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tangle-e3206": {
+      "hosting": {
+        "tangle": [
+          "tangle-e3206"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tangle-e3206"
+  }
+}
